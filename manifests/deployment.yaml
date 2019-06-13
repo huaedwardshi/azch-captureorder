@@ -33,21 +33,14 @@ spec:
               cpu: "500m"
           env:
           - name: TEAMNAME
-            value: 'placeholder' # will be patched at deployment time by value of 'teamName' in the variable group
+            value: NGPP
+          - name: CHALLENGEAPPINSIGHTS_KEY # uncomment and set value only if you've been provided a key
+            value: "bb405433-593b-455a-871f-ed5d6a5be13e" # uncomment and set value only if you've been provided a key
           - name: MONGOHOST
-            valueFrom:
-              secretKeyRef:
-                name: mongodb
-                key: mongoHost
+            value: "orders-mongo-mongodb.default.svc.cluster.local"
           - name: MONGOUSER
-            valueFrom:
-              secretKeyRef:
-                name: mongodb
-                key: mongoUser
+            value: "orders-user"
           - name: MONGOPASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: mongodb
-                key: mongoPassword
+            value: "orders-password"
           ports:
-          - containerPort: 80
+          - containerPort: 8080
