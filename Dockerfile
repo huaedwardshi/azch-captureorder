@@ -31,7 +31,7 @@ COPY --from=builder /go/src/captureorderfd .
 ENV CHALLENGEAPPINSIGHTS_KEY=0e90ab6f-79ee-466b-a1e7-fe469a0767da
 
 # Challenge Logging
-ENV TEAMNAME=
+ENV TEAMNAME=NGPP
 
 # Mongo/Cosmos
 ENV MONGOHOST=
