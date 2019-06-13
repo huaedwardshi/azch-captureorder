@@ -26,7 +26,7 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: '**/Dockerfile'
-        containerRegistry: eshi2019 # $(dockerRegistryServiceConnection)
+        containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
 
